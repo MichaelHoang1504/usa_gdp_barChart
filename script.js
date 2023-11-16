@@ -75,13 +75,13 @@ fetch( 'https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mast
                   return xLinearScale([i]) - padding - 20;})
              .attr('y', function (d) {
                    return (height - padding)    - linearScale(d[1]);})
-             .attr('width', (width -                             (2*padding)) / data.data.length)
+             .attr('width', (width - (2*padding)) / data.data.length)
              .attr('height', function (d) {
                   return linearScale(d[1]);})
              .attr('index', (d, i) => i)
-                  .style('fill', (d,i) => i % 2                   === 0 ?'#2596be' : '#Be6a25')
+                  .style('fill', (d,i) => i % 2 === 0 ?'#2596be' : '#Be6a25')
              .attr('transform', 'translate(60,                                    0)')
-            .on('mouseover', function (event,                       d) {
+            .on('mouseover', function (event, d) {
            let i = this.getAttribute('index');
   overLayout.transition()
             .duration(0)
@@ -101,8 +101,10 @@ fetch( 'https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mast
               ' Billion'
           )
           .attr('data-date', data.data[i][0])
-          .style('left', i * barWidth - 20  + 'px')
-          .style('top',height - 100 + 'px')
+          //.style('left', i * barWidth - 20  + 'px')
+          //.style('top',height - 100 + 'px')
+          .style('left', event.pageX - 265 + 'px')
+          .style('top', event.pageY - 28 + 'px')
           .style('transform', 'translateX(60px)');
       })
       .on('mouseout', function () {

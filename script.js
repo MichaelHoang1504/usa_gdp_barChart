@@ -103,7 +103,7 @@ fetch( 'https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mast
           .attr('data-date', data.data[i][0])
           //.style('left', i * barWidth - 20  + 'px')
           //.style('top',height - 100 + 'px')
-          .style('left', event.pageX - 360 + 'px')
+          .style('left', event.pageX - 345 + 'px')
           .style('top', event.pageY - 150 + 'px')
           .style('transform', 'translateX(60px)');
       })
